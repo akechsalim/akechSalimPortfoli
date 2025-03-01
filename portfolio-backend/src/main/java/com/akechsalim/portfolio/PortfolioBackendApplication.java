@@ -17,22 +17,12 @@ public class PortfolioBackendApplication {
 	public CorsFilter corsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
-
-		// Allow requests from React frontend (localhost:3000 for dev)
-		config.addAllowedOrigin("http://localhost:3000");
-
-		// Allow all HTTP methods (GET, POST, etc.)
+		config.addAllowedOrigin("http://localhost:3000"); // Local dev
+		config.addAllowedOrigin("https://akech-salim-portfolio.vercel.app"); // Placeholder Vercel URL
 		config.addAllowedMethod("*");
-
-		// Allow all headers
 		config.addAllowedHeader("*");
-
-		// Allow credentials (e.g., cookies, if needed; optional)
 		config.setAllowCredentials(true);
-
-		// Apply this configuration to all API endpoints
 		source.registerCorsConfiguration("/api/**", config);
-
 		return new CorsFilter(source);
 	}
 
