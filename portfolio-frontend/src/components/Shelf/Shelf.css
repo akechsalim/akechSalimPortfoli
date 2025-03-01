@@ -1,0 +1,88 @@
+.shelf {
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1f2a44 0%, #0f172a 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.shelf::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.shelf-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f5f0e1; /* Off-white */
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.shelf-list {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.shelf-post {
+    background: rgba(31, 42, 68, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.shelf-post-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f5f0e1; /* Off-white */
+    margin-bottom: 0.5rem;
+}
+
+.shelf-post-date {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #a3bffa; /* Soft teal */
+    margin-bottom: 1rem;
+}
+
+.shelf-post-excerpt {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #a3bffa; /* Soft teal */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.shelf-post-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #d4a017; /* Gold */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.shelf-post-link:hover {
+    text-decoration: underline;
+}
+
+.shelf-empty {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #a3bffa; /* Soft teal */
+    position: relative;
+    z-index: 1;
+}

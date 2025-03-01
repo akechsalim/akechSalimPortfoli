@@ -5,10 +5,12 @@ import './Work.css';
 
 function Work() {
     const [projects, setProjects] = useState([]);
+    const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+
 
     useEffect(() => {
         axios
-            .get('http://localhost:8080/api/projects')
+            .get(`${API_URL}/api/projects`)
             .then((response) => setProjects(response.data))
             .catch((error) => console.error('Error fetching projects:', error));
     }, []);
@@ -30,25 +32,32 @@ function Work() {
                 transition={{ duration: 1, delay: 0.2 }}
             >
                 {projects.length > 0 ? (
-                    projects.map((project) => (
+                    projects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             className="work-card"
-                            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-                            initial={{ opacity: 0, y: 20 }}
+                            whileHover={{ scale: 1.05, rotate: 1, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)' }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <h3 className="work-card-title">{project.title}</h3>
-                            <p className="work-card-description">{project.description}</p>
-                            <a
-                                href={project.link}
-                                className="work-card-link"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                View Project
-                            </a>
+                            <img
+                                src={project.imageUrl}
+                                alt={project.title}
+                                className="work-card-image"
+                            />
+                            <div className="work-card-content">
+                                <h3 className="work-card-title">{project.title}</h3>
+                                <p className="work-card-description">{project.description}</p>
+                                <a
+                                    href={project.link}
+                                    className="work-card-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    View Project
+                                </a>
+                            </div>
                         </motion.div>
                     ))
                 ) : (

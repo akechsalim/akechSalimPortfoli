@@ -3,25 +3,74 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Full viewport height */
-    background: #1a1a1a; /* Dark background like olaolu.dev */
+    min-height: 100vh;
+    /* Creative background: radial gradient with subtle overlay */
+    background: radial-gradient(circle at center, #1f2a44 0%, #0f172a 100%);
+    position: relative; /* For pseudo-element overlay */
     padding: 2rem;
+    overflow: hidden; /* Prevent overflow from pseudo-element */
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Subtle dot grid overlay */
+    opacity: 0.3;
+    z-index: 0; /* Behind content */
+}
+
+.home-content {
     text-align: center;
+    position: relative; /* Above overlay */
+    z-index: 1;
+}
+
+.home-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    background: #000000;
+    object-fit: cover;
+    border: 2px solid #d4a017; /* Warm gold border */
 }
 
 .home-name {
-    font-family: 'Arial', sans-serif; /* Placeholder; olaolu.dev uses a custom font */
-    font-size: 4.5rem; /* Large, bold like olaolu.dev */
+    font-family: 'Arial', sans-serif; /* Update to a custom font later */
+    font-size: 4.5rem;
     font-weight: 700;
-    color: #ffffff; /* White text */
+    color: #f5f0e1; /* Off-white for elegance */
     margin: 0;
     line-height: 1.1;
 }
 
 .home-tagline {
     font-family: 'Arial', sans-serif;
-    font-size: 1.8rem; /* Slightly smaller than name */
+    font-size: 1.8rem;
     font-weight: 400;
-    color: #aaaaaa; /* Muted gray for contrast */
-    margin-top: 1rem;
+    color: #a3bffa; /* Soft teal for subtlety */
+    margin: 1rem 0 2rem;
+}
+
+.home-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.home-skill {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #d4a017; /* Warm gold for skills */
+    background: rgba(31, 42, 68, 0.8); /* Darker gradient shade */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
