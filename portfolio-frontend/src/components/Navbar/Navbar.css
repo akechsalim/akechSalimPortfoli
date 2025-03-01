@@ -1,0 +1,49 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.9); /* Dark, semi-transparent background like olaolu.dev */
+    padding: 1rem 0;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin: 0 2rem; /* Spacing between links */
+}
+
+.navbar-link {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    font-family: 'Arial', sans-serif; /* Matches olaolu.dev's clean typography */
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar-link:hover {
+    color: #00ccff; /* Cyan hover effect inspired by olaolu.dev's accent */
+}
+
+.navbar-link-active {
+    color: #00ccff; /* Active link color */
+    position: relative;
+}
+
+.navbar-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ccff; /* Underline for active link, like olaolu.dev */
+}

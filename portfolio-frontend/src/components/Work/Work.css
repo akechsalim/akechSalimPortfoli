@@ -1,0 +1,63 @@
+.work {
+    min-height: 100vh; /* Full viewport height */
+    background: #1a1a1a; /* Dark background */
+    padding: 6rem 2rem; /* Extra top padding for fixed navbar */
+    text-align: center;
+}
+
+.work-title {
+    font-family: 'Arial', sans-serif; /* Placeholder font */
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 3rem;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px; /* Constrain width like olaolu.dev */
+    margin: 0 auto;
+}
+
+.work-card {
+    background: #2a2a2a; /* Slightly lighter dark for cards */
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.work-card-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.work-card-description {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    color: #aaaaaa;
+    margin-bottom: 1.5rem;
+}
+
+.work-card-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    color: #00ccff; /* Cyan link color */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.work-card-link:hover {
+    text-decoration: underline;
+}
+
+.work-empty {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #aaaaaa;
+}
