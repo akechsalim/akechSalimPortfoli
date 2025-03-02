@@ -1,6 +1,21 @@
 version: '3.8'
 services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: akechsalim
+      POSTGRES_PASSWORD: akech4476
+      POSTGRES_DB: portfolio_db
+    ports:
+      - "5432:5432"
   app:
     build: .
     ports:
-      - "8080:8080"
+      - "${PORT:-8080}:${PORT:-8080}" # Use environment variable or default to 8080
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: ${DATABASE_URL:-jdbc:postgresql://db:5432/portfolio_db}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME:-akechsalim}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-akech4476}
+      PORT: ${PORT:-8080} # Pass PORT to the application
