@@ -11,5 +11,5 @@ RUN ls -l /usr/src/app/target
 FROM amazoncorretto:17
 WORKDIR /app
 COPY --from=build /usr/src/app/target/*.jar app.jar
-EXPOSE 8080
+EXPOSE ${PORT:-8080}
 ENTRYPOINT ["java", "-jar", "app.jar"]

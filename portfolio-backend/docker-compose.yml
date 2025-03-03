@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: ${DATABASE_URL:-jdbc:postgresql://db:5432/portfolio_db}
-      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME:-akechsalim}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-akech4476}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL:-jdbc:postgresql://db:5432/portfolio_db}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME:-akechsalim}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD:-akech4476}
       PORT: ${PORT:-8080} # Pass PORT to the application
